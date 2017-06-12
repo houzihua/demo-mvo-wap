@@ -1,0 +1,109 @@
+/*font color*/
+.c-black, .c-000 {
+    color: black;
+}
+.c-fff{
+    color: #fff;
+}
+.c-333 {
+    color: #333333;
+}
+
+.c-666 {
+    color: #666666;
+}
+
+.c-gray {
+    color: #808080
+}
+
+.c-999 {
+    color: #999999;
+}
+
+.c-darkgray {
+    color: darkgray;
+    /*#a9a9a9*/
+}
+
+.c-ccc {
+    color: #cccccc;
+}
+
+.c-059 {
+    color: #005599;
+}
+
+.c-3094ed {
+    color: #3094ed;
+}
+
+.c-red {
+    color: #f36;
+}
+.c-f60 {
+    color: #ff6600;
+}
+
+.c-orangered{
+    color: orangered;
+}
+.c-f70, .c-orange {
+    color: #ff7700;
+}
+.c-fab70d {
+    color: #fab70d;
+}
+
+.c-4b9d3a {
+    color: #4b9d3a;
+}
+.c-fc353a{
+    color: #fc353a;
+}
+.c-success,
+.c-green{
+    color: #1bbb35;
+}
+.c-lgreen{
+   color: #4fd2c2;
+}
+.c-blue{
+    color: #4ba8f6;
+}
+.c-purple{
+    color: #9795ff;
+}
+.f-ksst{
+    font-family: "宋体", '微软雅黑', "arial", sans-serif;
+    font-style: normal;
+}
+
+/*排版*/
+.t-center {
+    text-align: center;
+}
+
+.t-left {
+    text-align: left;
+}
+
+.t-right {
+    text-align: right;
+}
+
+.fs-12{font-size: 12px;}
+.fs-14{font-size: 14px;}
+.fs-20{font-size: 20px;}
+.fs-16{font-size: 16px;}
+.fs-18{font-size: 18px;}
+
+
+
+
+.b{font-weight: bold}
+.lineh-16{line-height: 16px;}
+.lineh-18{line-height: 18px;}
+.lineh-20{line-height: 20px;}
+.lineh-25{line-height: 25px;}
+.lineh-35{line-height: 35px;}

@@ -1,0 +1,14 @@
+@import url("reset.css");
+@import url("common.css");
+@import url("margin.css");
+@import url("fonts.css");
+@import url("fs/css/font-awesome.min.css");
+
+
+.mint-header.is-fixed:before{ content: ' '; display: block; height: 40px; }
+
+.header-space{height: 40px;position: relative}
+.footer-space{height: 55px;position: relative}
+
+.mint-navbar .mint-tab-item{height: 48px;}
+.mint-navbar .mint-tab-item-label{font-size: 14px}
