@@ -18,7 +18,9 @@
           <li v-for="(item,index) in prdlist"
               :item="item" is="es-item-info"
               @prd-item-touched="broadItemChangeCover"
-              :id="index">
+              :id="index"
+              ref="items"
+          >
           </li>
         </ul>
       </mt-tab-container-item>
@@ -48,13 +50,20 @@
       return {
         value: '',
         selected: '1',
+        showCoverId: '-100',
         defaultResult: dict.__getServerDictCategory('search_result').s,
       };
     },
     methods:{
+      //所有组件改变弹窗
       broadItemChangeCover: function (data) {
-        console.log(data)
-
+        for(var item of this.$refs.items){
+          if(item.id !=data){
+            item.showCover = false;
+          }else{
+            item.showCover = true;
+          }
+        }
       }
     },
     components: {
@@ -63,7 +72,6 @@
     },
     computed: {
       filterResult() {
-        console.log(this.defaultResult)
         return this.defaultResult.filter(value => new RegExp(this.value, 'i').test(value));
       },
       prdlist(){
@@ -77,7 +85,7 @@
           }
         }
         var newlist = [];
-        for(let i = 0;i<50;i++){
+        for(let i = 0;i<15;i++){
           let num = Math.round(Math.random()*6.5);
           newlist.push(list[num])
         }

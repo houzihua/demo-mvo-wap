@@ -1,19 +1,19 @@
 
 <template>
-  <div class="es-item-info item flex-1">
+  <div class="es-item-info item flex-1"  @blur="test()">
     <div class="con">
       <div class="img-wrap">
         <div class="img-inner-wrap">
           <img v-lazy="item.url">
         </div>
       </div>
-      <div class="ellipsis mlr-10 pad" @click="changeShow">
+      <div class="ellipsis info-wrap" @click="changeShowId">
         <p class="fs-16 b lineh-25 mt-5">{{item.name}}</p>
         <p class="fs-12 c-999 lineh-18">品牌：{{item.pinpai}}</p>
         <p class="fs-12 c-999 lineh-18">类目：{{item.leimu}}</p>
         <p class="fs-12 c-999 lineh-18">商品款数：{{item.num}}款</p>
         <transition name="slide-fade-right">
-          <div v-if="show">hello</div>
+          <div v-if="showCover">hello</div>
         </transition>
       </div>
     </div>
@@ -24,14 +24,21 @@
   export default {
     data(){
       return {
-        show:false,
-
+        showCover:false,
+      }
+    },
+    props: {
+      item:{
+        default: ''
+      },
+      id:{
+        default:-1
       }
     },
     methods:{
-      changeShow:function () {
-        if(this.show){
-          this.show=false;
+      changeShowId:function () {
+        if(this.showCover){
+          this.showCover = false;
         }else{
           this.closeOtherCoverAll();
         }
@@ -39,14 +46,6 @@
       closeOtherCoverAll: function () {
         var id = this.id;
         this.$emit('prd-item-touched', id);
-      }
-    },
-    props: {
-      item:{
-        default:''
-      },
-      id:{
-        default:-1
       }
     },
     watch:{
@@ -64,6 +63,7 @@
   .item .con{background: #fff;height: 100%}
   .item .img-wrap{text-align: center;height: 0;padding-top: 60%;position: relative}
   .item .img-inner-wrap{position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
+  .info-wrap{margin: 0 10px}
   .item img{max-width: 100%;max-height: 100%;position: absolute; top: 50%; left: 50%; transform: translate3d(-50%,-50%,0); -webkit-transform: translate3d(-50%,-50%,0);}
 </style>
 <style>
