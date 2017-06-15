@@ -51,15 +51,15 @@
 
 <script type="text/ecmascript-6">
   import EsFooter from '../../components/es-footer.vue'
-  import img1 from '../../assets/test/001.jpg';
-  import img2 from '../../assets/test/002.jpg';
-  import img3 from '../../assets/test/003.jpg';
-  import img4 from '../../assets/test/004.jpg';
-  import img5 from '../../assets/test/005.jpg';
-  import img6 from '../../assets/test/006.jpg';
-  import img7 from '../../assets/test/007.jpg';
-  import img8 from '../../assets/test/008.png';
-  import img9 from '../../assets/test/009.jpg';
+  import img1 from '../../../static/img/test/001.jpg';
+  import img2 from '../../../static/img/test/002.jpg';
+  import img3 from '../../../static/img/test/003.jpg';
+  import img4 from '../../../static/img/test/004.jpg';
+  import img5 from '../../../static/img/test/005.jpg';
+  import img6 from '../../../static/img/test/006.jpg';
+  import img7 from '../../../static/img/test/007.jpg';
+  import img8 from '../../../static/img/test/008.png';
+  import img9 from '../../../static/img/test/009.jpg';
   export default {
     props: {
     },

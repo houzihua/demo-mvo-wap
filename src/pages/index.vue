@@ -16,7 +16,7 @@
     <div class="person flex-box">
       <div class="es-half t-right">
         <div class="img-wrap inline-block">
-          <img class="img" src="../assets/logo.png"/>
+          <img class="img" src="../../static/img/logo.png"/>
         </div>
       </div>
 
