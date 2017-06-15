@@ -1,6 +1,5 @@
 
 <template>
-
   <div class="es-count-input flex-box">
     <div class="count-btn-wrap">
       <div class="count-btn" @touchstart = 'sub'>
@@ -30,7 +29,7 @@
     props: {
       //值，默认 0
       value: { default: 0},
-      //小数点位数， 默认 0，可选 0 1 2 3
+      //小数点位数， 默认2，可选 0 1 2 3
       decimalLength: { default: 2},
       min:{ default: 0},
       max:{ default: 10000000}

@@ -12,28 +12,10 @@
       <mt-tab-item id="4">已停产</mt-tab-item>
     </mt-navbar>
 
-   <!-- <div>
-      <mt-cell class="page-part" title="当前选中">{{ selected }}</mt-cell>
-    </div>-->
-
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="1">
-        <ul class="clearfix">
-          <li class="item" v-for="item in prdlist">
-            <div class="con">
-              <div class="img-wrap">
-                  <div class="img-inner-wrap">
-                      <img v-lazy="item.url">
-                  </div>
-              </div>
-
-              <div class="ellipsis mlr-10 pad">
-                <p class="fs-16 b lineh-25 mt-5">{{item.name}}</p>
-                <p class="fs-12 c-999 lineh-18">品牌：{{item.pinpai}}</p>
-                <p class="fs-12 c-999 lineh-18">类目：{{item.leimu}}</p>
-                <p class="fs-12 c-999 lineh-18">商品款数：{{item.num}}款</p>
-              </div>
-            </div>
+        <ul class="clearfix flex-box flex-wrap">
+          <li  v-for="item in prdlist" :item="item" is="es-item-info">
           </li>
         </ul>
       </mt-tab-container-item>
@@ -54,6 +36,7 @@
 
 <script type="text/ecmascript-6">
   import EsFooter from '../components/es-footer.vue';
+  import EsItemInfo from '../components/es-item-info.vue';
   import img1 from '../assets/test/001.jpg';
   import img2 from '../assets/test/002.jpg';
   import img3 from '../assets/test/003.jpg';
@@ -71,30 +54,16 @@
       return {
         value: '',
         selected: '1',
-        defaultResult: [
-          'Apple',
-          'Banana',
-          'Orange',
-          'Durian',
-          'Lemon',
-          'Peach',
-          'Cherry',
-          'Berry',
-          'Core',
-          'Fig',
-          'Haw',
-          'Melon',
-          'Plum',
-          'Pear',
-          'Peanut',
-          'Other'
-        ]
+        defaultResult: ['Apple', 'Banana', 'Orange', 'Durian', 'Lemon', 'Peach', 'Cherry', 'Berry', 'Core', 'Fig', 'Haw', 'Melon', 'Plum', 'Pear', 'Peanut', 'Other']
       };
     },
     methods:{
 
     },
-    components: { EsFooter: EsFooter },
+    components: {
+      EsFooter: EsFooter ,
+      EsItemInfo: EsItemInfo
+    },
     computed: {
       filterResult() {
 //        console.log(this.defaultResult.filter(value => new RegExp(this.value, 'i').test(value)))
@@ -165,13 +134,7 @@
 </script>
 <style scoped>
   .mint-search{height: 44px;overflow: visible;position: relative;z-index: 2}
-  .item{width: 50%;padding: 2px 2px 2px 2px;background: #f7f7f7;display: block;float: left;}
-  /*.item:nth-child(even){margin-left: -2px;padding-left: 3px;}*/
-  .item .con{background: #fff;height: 100%}
-  .item .img-wrap{text-align: center;height: 0;padding-top: 60%;position: relative}
-  .item .img-inner-wrap{position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
-  .item img{max-width: 100%;max-height: 100%;position: absolute; top: 50%; left: 50%; transform: translate3d(-50%,-50%,0); -webkit-transform: translate3d(-50%,-50%,0);}
-</style>
+ </style>
 <style>
   .mint-searchbar{background: #f7f7f7}
 </style>
