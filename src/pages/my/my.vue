@@ -97,7 +97,6 @@
     import EsFooter from '../../components/es-footer.vue';
     import EsPageInRight from '../../components/es-page-in-right.vue';
     import EsCountInput from '../../components/es-count-input.vue';
-    import EsCountInputTest from '../../components/es-count-input-test.vue';
 
 
     export default {
@@ -129,8 +128,6 @@
             EsFooter: EsFooter,
             EsPageInRight: EsPageInRight,
             EsCountInput: EsCountInput,
-            EsCountInputTest: EsCountInputTest
-
         },
         computed: {
             money: function () {
