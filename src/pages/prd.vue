@@ -19,8 +19,7 @@
               :item="item" is="es-item-info"
               @prd-item-touched="broadItemChangeCover"
               :id="index"
-              ref="items"
-          >
+              ref="items">
           </li>
         </ul>
       </mt-tab-container-item>
