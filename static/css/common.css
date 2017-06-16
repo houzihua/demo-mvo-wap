@@ -1,0 +1,9 @@
+.es-full-page{height: 100vh;width: 100vw;}
+.es-input{background: #fff;border: solid 1px #e3e3e3;border-radius: 5px;padding: 5px;height: 30px;width: 100%}
+.header-space{height: 40px;position: relative;display: block}
+.footer-space{height: 55px;position: relative;display: block}
+
+
+.es-search-wrap{padding: 8px 10px;background: #f7f7f7}
+.es-search-wrap .fa-search{position: absolute;line-height: 30px;left: 5px;top: 0;color: #999}
+.es-search-wrap .es-input{padding-left: 20px}

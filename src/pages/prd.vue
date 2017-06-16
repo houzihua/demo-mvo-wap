@@ -14,7 +14,7 @@
 
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="1">
-        <ul class="clearfix flex-box flex-wrap">
+        <ul class="clearfix">
           <li v-for="(item,index) in prdlist"
               :item="item" is="es-item-info"
               @prd-item-touched="broadItemChangeCover"

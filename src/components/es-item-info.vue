@@ -1,6 +1,6 @@
 
 <template>
-  <div class="es-item-info item flex-1" >
+  <div class="es-item-info item" >
     <div class="con">
       <div class="img-wrap">
         <div class="img-inner-wrap">
@@ -72,15 +72,15 @@
 
 </script>
 <style scoped>
-  .item{width: 50%;background: #f7f7f7;padding: 2px 0}
+  .item{width: 50%;background: #f7f7f7;padding: 2px 0;float: left}
   .item:nth-child(odd){padding-right: 1px;}
   .item:nth-child(even){padding-left: 1px;}
   .item .con{background: #fff;height: 100%}
-  .item .img-wrap{text-align: center;height: 0;padding-top: 60%;position: relative}
+  .item .img-wrap{text-align: center;height: 0;padding-top: 100%;position: relative}
   .item .img-inner-wrap{position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
   .info-wrap{padding: 0 10px;position: relative;font-size: 12px;line-height: 18px;color: #999}
   .item img{max-width: 100%;max-height: 100%;position: absolute; top: 50%; left: 50%; transform: translate3d(-50%,-50%,0); -webkit-transform: translate3d(-50%,-50%,0);}
-  .more-btn{position: absolute;right: 0;bottom: 0;background: #fff;line-height: 18px;padding: 5px 10px}
+  .more-btn{position: absolute;right: 0;bottom: 0;background: #fff;line-height: 30px;padding: 0px 10px;font-size: 20px;color: #333}
   .es-item-cover{background: #fff;position: absolute;width: 100%;bottom: 0;right: 0;padding: 5px 10px}
 </style>
 <style>
