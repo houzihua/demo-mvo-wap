@@ -3,12 +3,12 @@
     <mt-header fixed title="商品列表"></mt-header>
     <div class="header-space"></div>
     <div class="es-search-wrap flex-box">
-      <div class="pr">
+      <div class="pr flex-1">
         <i class="fa fa-search"></i>
         <input class="es-input" />
       </div>
-      <div>
-        <i class="fa fa-list" @click="changeView"></i>
+      <div @click="changeView" class="change-icon">
+        <i class="fa fa-list"></i>
       </div>
     </div>
     <mt-navbar v-model="selected">
@@ -105,5 +105,6 @@
 
 </script>
 <style scoped>
-  .mint-search{height: 44px;overflow: visible;position: relative;z-index: 2}
+  .change-icon{font-size: 16px;padding: 0 10px;color: #999}
+  .es-search-wrap{padding-right: 0}
 </style>
