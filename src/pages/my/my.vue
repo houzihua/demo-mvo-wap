@@ -70,6 +70,7 @@
             <es-count-input ref="test" v-model="count2" decimalLength="1"></es-count-input>
             <es-count-input ref="test" v-model="count3" decimalLength="2"></es-count-input>
             <es-count-input ref="test" v-model="count4" decimalLength="4"></es-count-input>
+          <input v-model="count1"/>
 
             <div class="mt-10">
                 <mt-button @click.native="popupVisible2 = true" size="large" type="primary">打开新 popup</mt-button>
