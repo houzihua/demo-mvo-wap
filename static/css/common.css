@@ -4,6 +4,7 @@
 .footer-space{height: 55px;position: relative;display: block}
 
 
-.es-search-wrap{padding: 8px 10px;background: #f7f7f7}
+.es-search-wrap{padding: 8px 10px;background: #f7f7f7;line-height: 30px;}
 .es-search-wrap .fa-search{position: absolute;line-height: 30px;left: 5px;top: 0;color: #999}
 .es-search-wrap .es-input{padding-left: 20px}
+

@@ -46,3 +46,9 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  height: 0;
+}

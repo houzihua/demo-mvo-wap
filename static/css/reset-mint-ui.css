@@ -1,5 +1,5 @@
 .mint-navbar .mint-tab-item{height: 48px;}
 .mint-navbar .mint-tab-item-label{font-size: 14px}
 .mint-button.mint-button--default{box-shadow: none}
-
+.mint-header.is-fixed{z-index: 10}
 

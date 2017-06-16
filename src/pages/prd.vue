@@ -1,9 +1,15 @@
 <template>
-  <div>
+  <section class="es-full-page">
     <mt-header fixed title="商品列表"></mt-header>
     <div class="header-space"></div>
-    <div class="page-search">
-      <mt-search autofocus v-model="value" :result="filterResult"></mt-search>
+    <div class="es-search-wrap flex-box">
+      <div class="pr">
+        <i class="fa fa-search"></i>
+        <input class="es-input" />
+      </div>
+      <div>
+        <i class="fa fa-list" @click="changeView"></i>
+      </div>
     </div>
     <mt-navbar v-model="selected">
       <mt-tab-item id="1">销售中</mt-tab-item>
@@ -14,7 +20,7 @@
 
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="1">
-        <ul class="clearfix">
+        <ul class="clearfix" :class="viewClass">
           <li v-for="(item,index) in prdlist"
               :item="item" is="es-item-info"
               @prd-item-touched="broadItemChangeCover"
@@ -33,9 +39,8 @@
         <mt-cell v-for="n in 6" :key="n" :title="'选项 ' + n" />
       </mt-tab-container-item>
     </mt-tab-container>
-
     <es-footer selected="2"></es-footer>
-  </div>
+  </section>
 </template>
 
 <script type="text/ecmascript-6">
@@ -51,6 +56,7 @@
         selected: '1',
         showCoverId: '-100',
         defaultResult: dict.__getServerDictCategory('search_result').s,
+        viewClass:''
       };
     },
     methods:{
@@ -63,6 +69,10 @@
             item.showCover = true;
           }
         }
+      },
+      changeView: function () {
+        console.log(this.viewClass)
+        this.viewClass = this.viewClass==''? 'prd-row-wiew':''
       }
     },
     components: {
@@ -96,7 +106,4 @@
 </script>
 <style scoped>
   .mint-search{height: 44px;overflow: visible;position: relative;z-index: 2}
- </style>
-<style>
-  .mint-searchbar{background: #f7f7f7}
 </style>
