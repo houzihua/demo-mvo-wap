@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style>
-  @import '../static/css/app-all.css';
+<style >
+  @import '../static/less/app-all.less';
 </style>

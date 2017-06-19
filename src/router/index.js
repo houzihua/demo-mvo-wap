@@ -9,6 +9,7 @@ import inquiry from '@/pages/inquiry/inquiry'
 
 import my from '@/pages/my/my'
 
+import productMedia from '@/pages/my/product-media/product-media'
 
 
 Vue.use(Router)
@@ -34,6 +35,11 @@ export default new Router({
       path: '/inquiry',
       name: 'inquiry',
       component: inquiry
+    },
+    {
+      path: '/member/product-media',
+      name: 'productMedia',
+      component: productMedia
     },
   ]
 })

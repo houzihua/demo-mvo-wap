@@ -29,7 +29,10 @@
             <mt-cell title="我的品牌" is-link></mt-cell>
         </div>
         <div class="es-single-link">
+
+          <router-link to="/member/product-media" >
             <mt-cell title="资料库" is-link></mt-cell>
+          </router-link>
         </div>
 
         <ul class="es-link-list mb-10">

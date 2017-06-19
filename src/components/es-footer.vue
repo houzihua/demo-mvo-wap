@@ -57,9 +57,9 @@
 
 </script>
 <style scoped>
-.es-footer{height: 55px;position: relative;color: #999;}
-.bar{background: #fff;position: fixed;left: 0;right: 0;bottom: 0;z-index: 1;display: flex;text-align: center;padding: 5px 0;height: 55px;}
-.item{width: 25%;}
-.icon-wrap{font-size: 20px;line-height: 22px;margin-bottom: 1px;}
-.item.selected { background: #fff; color: #f70; }
+.es-footer{height: 55px;position: relative;color: #999;background: #f7f6fb}
+.bar{background: #f7f6fb;position: fixed;left: 0;right: 0;bottom: 0;z-index: 1;display: flex;text-align: center;padding: 5px 0;height: 55px;border-top: solid 1px #ccc}
+.item{width: 25%;font-size: 11px}
+.icon-wrap{font-size: 22px;line-height: 22px;margin-bottom: 1px;margin-top: 2px}
+.item.selected { background: none; color: #0099e9; }
 </style>
