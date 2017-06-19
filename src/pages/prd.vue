@@ -64,7 +64,7 @@
       };
     },
     methods:{
-      //所有组件改变弹窗
+      //点击产品内容后触发，所有组件改变弹窗
       broadItemChangeCover: function (data) {
         for(var item of this.$refs.items){
           if(item.id !=data){

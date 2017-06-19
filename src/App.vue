@@ -11,5 +11,6 @@ export default {
 </script>
 
 <style >
+  @import '../static/css/fs/css/font-awesome.min.css';
   @import '../static/less/app-all.less';
 </style>
