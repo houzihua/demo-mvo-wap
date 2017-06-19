@@ -11,14 +11,17 @@
         <i class="fa fa-list"></i>
       </div>
     </div>
-    <mt-navbar v-model="selected">
+    <mt-navbar v-model="statueSelected">
       <mt-tab-item id="1">销售中</mt-tab-item>
       <mt-tab-item id="2">审核中</mt-tab-item>
       <mt-tab-item id="3">审核不通过</mt-tab-item>
       <mt-tab-item id="4">已停产</mt-tab-item>
     </mt-navbar>
 
-    <mt-tab-container v-model="selected">
+    <p>
+      网络：{{connectionType}}
+    </p>
+    <mt-tab-container v-model="statueSelected">
       <mt-tab-container-item id="1">
         <ul class="clearfix" :class="viewClass">
           <li v-for="(item,index) in prdlist"
@@ -53,7 +56,8 @@
     data(){
       return {
         value: '',
-        selected: '1',
+        //选中状态
+        statueSelected: '1',
         showCoverId: '-100',
         defaultResult: dict.__getServerDictCategory('search_result').s,
         viewClass:''
@@ -95,11 +99,19 @@
         }
         var newlist = [];
         for(let i = 0;i<15;i++){
-          let num = Math.round(Math.random()*6.5);
+          let num = Math.round(Math.random()*7);
           newlist.push(list[num])
         }
         return newlist
-      }
+      },
+      connectionType(){
+        console.log(navigator.connection)
+        if(navigator.connection){
+          return navigator.connection.type
+        }else{
+          return '无法检测网络'
+        }
+      },
     }
   }
 
