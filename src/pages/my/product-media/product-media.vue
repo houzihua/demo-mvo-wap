@@ -58,8 +58,9 @@
     },
     components: {EsBreadcrumb:EsBreadcrumb},
     computed: {
+      //假数据
       itemList() {
-        var list =[{ id: 1, name:'一级文件夹啊啊'},{ id: 2, name:'二级文件夹啊啊'},{ id: 3, name:'三级文件夹啊啊'},{ id: 4, name:'四级级文件夹的啊'}];
+        var list =[{ id: 1, name:'一文件夹啊啊'},{ id: 2, name:'二文件夹啊啊'},{ id: 3, name:'三文件夹啊啊'},{ id: 4, name:'四文件夹的啊'}];
         return list
       }
     }

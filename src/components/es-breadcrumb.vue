@@ -38,6 +38,7 @@
       }
     },
     watch:{
+      //列表变化后滚到最后
       list(val){
         this.$nextTick(function(){
           var scrollNav = this.$refs.scrollNav;
