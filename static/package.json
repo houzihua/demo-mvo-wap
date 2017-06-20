@@ -11,8 +11,13 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.4.2",
+    "gulp-concat": "^2.6.1",
     "gulp-less": "^3.3.2",
+    "gulp-nop": "0.0.3",
+    "gulp-notify": "^3.0.0",
     "gulp-sequence": "^0.4.6",
-    "gulp-sourcemaps": "^2.6.0"
+    "gulp-sourcemaps": "^2.6.0",
+    "node-extensions": "1.8.0",
+    "nodemon": "1.9.1"
   }
 }
