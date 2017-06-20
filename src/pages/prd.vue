@@ -77,10 +77,10 @@
       loadMore() {
         this.loadingMore = true;
         setTimeout(() => {
-          var list = this.prdlist.push.apply(this.prdlist,this.creatList());
-          console.log(list)
+          this.prdlist.push.apply(this.prdlist,this.creatList());
+          console.log(this.prdlist.length)
           this.loadingMore = false;
-        }, 2555);
+        }, 2000);
       },
       //制作假数据，每次10个
       creatList(){
