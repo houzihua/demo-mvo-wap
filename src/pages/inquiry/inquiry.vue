@@ -16,7 +16,6 @@
                   <img v-lazy="item.url">
                 </div>
               </div>
-
               <div class="ellipsis mlr-10 pad">
                 <p class="fs-16 b lineh-25 mt-5">{{item.name}}</p>
                 <p class="fs-12 c-999 lineh-18">国家：俄罗斯</p>

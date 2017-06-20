@@ -11,6 +11,7 @@
         <i class="fa fa-list"></i>
       </div>
     </div>
+
     <mt-navbar v-model="statueSelected">
       <mt-tab-item id="1">销售中</mt-tab-item>
       <mt-tab-item id="2">审核中</mt-tab-item>
@@ -18,30 +19,21 @@
       <mt-tab-item id="4">已停产</mt-tab-item>
     </mt-navbar>
 
-    <p>
-      网络：{{connectionType}}
-    </p>
-    <mt-tab-container v-model="statueSelected">
-      <mt-tab-container-item id="1">
-        <ul class="clearfix" :class="viewClass">
-          <li v-for="(item,index) in prdlist"
-              :item="item" is="es-item-info"
-              @prd-item-touched="broadItemChangeCover"
-              :id="index"
-              ref="items">
-          </li>
-        </ul>
-      </mt-tab-container-item>
-      <mt-tab-container-item id="2">
-        <mt-cell v-for="n in 4" :key="n" :title="'测试 ' + n" />
-      </mt-tab-container-item>
-      <mt-tab-container-item id="3">
-        <mt-cell v-for="n in 6" :key="n" :title="'选项 ' + n" />
-      </mt-tab-container-item>
-      <mt-tab-container-item id="4">
-        <mt-cell v-for="n in 6" :key="n" :title="'选项 ' + n" />
-      </mt-tab-container-item>
-    </mt-tab-container>
+    <div class="es-page-infinite-wrapper" ref="wrapper"  :style="{ height: wrapperHeight + 'px' }">
+      <ul class="clearfix" v-infinite-scroll="loadMore" infinite-scroll-disabled="loadingMore" infinite-scroll-distance="50" :class="viewClass">
+        <li v-for="(item,index) in prdlist"
+            :item="item" is="es-item-info"
+            @prd-item-touched="broadItemChangeCover"
+            :id="index"
+            ref="items">
+        </li>
+      </ul>
+      <p v-show="loadingMore" class="es-page-infinite-loading">
+        <mt-spinner type="fading-circle"></mt-spinner>
+        加载中...
+      </p>
+    </div>
+
     <es-footer selected="2"></es-footer>
   </section>
 </template>
@@ -60,7 +52,10 @@
         statueSelected: '1',
         showCoverId: '-100',
         defaultResult: dict.__getServerDictCategory('search_result').s,
-        viewClass:''
+        viewClass:'',
+        loadingMore: false,
+        allLoaded: false,
+        wrapperHeight: 0
       };
     },
     methods:{
@@ -77,6 +72,33 @@
       changeView: function () {
         console.log(this.viewClass)
         this.viewClass = this.viewClass==''? 'prd-row-wiew':''
+      },
+      //加载更多方法
+      loadMore() {
+        this.loadingMore = true;
+        setTimeout(() => {
+          var list = this.prdlist.push.apply(this.prdlist,this.creatList());
+          console.log(list)
+          this.loadingMore = false;
+        }, 2555);
+      },
+      //制作假数据，每次10个
+      creatList(){
+        let list = dict.__getServerDictCategory('prd_items').s;
+        for(var i = 1;i<=list.length;i++)
+        {
+          if(i == 8 ){
+            list[i-1].url='../../static/img/test/00'+i+'.png';
+          }else{
+            list[i-1].url='../../static/img/test/00'+i+'.jpg';
+          }
+        }
+        var newlist = [];
+        for(let i = 0;i<10;i++){
+          let num = Math.round(Math.random()*6);
+          newlist.push(list[num])
+        }
+        return newlist
       }
     },
     components: {
@@ -88,31 +110,14 @@
         return this.defaultResult.filter(value => new RegExp(this.value, 'i').test(value));
       },
       prdlist(){
-        let list = dict.__getServerDictCategory('prd_items').s;
-        for(var i = 1;i<=list.length;i++)
-        {
-          if(i == 8 ){
-            list[i-1].url='../../static/img/test/00'+i+'.png';
-          }else{
-            list[i-1].url='../../static/img/test/00'+i+'.jpg';
-          }
-        }
-        var newlist = [];
-        for(let i = 0;i<15;i++){
-          let num = Math.round(Math.random()*7);
-          newlist.push(list[num])
-        }
-        return newlist
-      },
-      connectionType(){
-        console.log(navigator.connection)
-        if(navigator.connection){
-          return navigator.connection.type
-        }else{
-          return '无法检测网络'
-        }
-      },
-    }
+        var list = this.creatList()
+        return list
+      }
+    },
+    mounted() {
+      this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top-55;
+    },
+
   }
 
 </script>

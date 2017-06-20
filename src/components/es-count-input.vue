@@ -31,7 +31,9 @@
       value: { default: 0},
       //小数点位数， 默认2，可选 0 1 2 3
       decimalLength: { default: 2},
+      //最小值
       min:{ default: 0},
+      //最大值
       max:{ default: 10000000}
     },
     methods: {

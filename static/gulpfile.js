@@ -16,7 +16,7 @@ gulp.task('less-check', function () {
 
 //实际只使用了压缩后的app-all.css
 gulp.task('less-app', function () {
-  return gulp.src(['less/app-all.less'])
+  return gulp.src(['less/app/app-all.less'])
     .pipe(less())
     .pipe(sourcemaps.write())
     .pipe(cleancss())
