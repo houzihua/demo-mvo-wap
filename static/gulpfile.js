@@ -11,7 +11,7 @@ gulp.task('less-app', function () {
     .pipe(less())
     .pipe(sourcemaps.write())
     .pipe(cleancss())
-    .pipe(gulp.dest('css/css-build'));
+    .pipe(gulp.dest('css'));
 
 });
 

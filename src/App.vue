@@ -12,5 +12,5 @@ export default {
 
 <style >
   @import '../static/css/fs/css/font-awesome.min.css';
-  @import '../static/css/css-build/app-all.css';
+  @import '../static/css/app-all.css';
 </style>
