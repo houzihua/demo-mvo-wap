@@ -19,7 +19,7 @@ function notify(data){
 
 //将less文件单独生成css,不做压缩
 //这里生成的css并没有用，只是生成后方便检查css样式是否写错;
-gulp.task('less-check', function () {
+gulp.task('css-check', function () {
   return gulp.src(['less/*.less'])
     .pipe(less())
     .pipe(sourcemaps.write())
@@ -30,7 +30,7 @@ gulp.task('less-check', function () {
 });
 
 //实际只使用了压缩后的app-all.css
-gulp.task('less-app', ['less-check'], function () {
+gulp.task('app-all', ['css-check'], function () {
   return gulp.src(['less/app/app-all.less'])
     .pipe(less())
     .pipe(sourcemaps.write())
@@ -42,11 +42,11 @@ gulp.task('less-app', ['less-check'], function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('less/*.less',  ['less-check', 'less-app']);
+  gulp.watch('less/*.less',  ['css-check', 'app-all']);
 });
 
 gulp.task("build", sequence(
-  ['less-check', 'less-app']
+  ['css-check', 'app-all']
 ));
 
 gulp.task("default", ["build"], function () {});

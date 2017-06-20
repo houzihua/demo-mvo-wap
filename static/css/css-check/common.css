@@ -96,7 +96,6 @@
   padding: 0 10px;
   color: #aaa;
 }
-/*无限滚动*/
 .es-page-infinite-wrapper {
   overflow-y: scroll;
   overflow-x: hidden;
