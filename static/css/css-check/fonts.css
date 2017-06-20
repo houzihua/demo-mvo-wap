@@ -28,9 +28,6 @@
 .c-059 {
   color: #005599;
 }
-.c-3094ed {
-  color: #3094ed;
-}
 .c-red {
   color: #f36;
 }
@@ -43,15 +40,6 @@
 .c-f70,
 .c-orange {
   color: #ff7700;
-}
-.c-fab70d {
-  color: #fab70d;
-}
-.c-4b9d3a {
-  color: #4b9d3a;
-}
-.c-fc353a {
-  color: #fc353a;
 }
 .c-success,
 .c-green {
@@ -109,7 +97,4 @@
 }
 .lineh-35 {
   line-height: 35px;
-}
-.b {
-  font-weight: bold;
 }
