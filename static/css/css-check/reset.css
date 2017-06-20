@@ -3,7 +3,6 @@
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 html {
-  -ms-text-size-adjust: 100%;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 1 */
@@ -35,7 +34,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 main,
 menu,
 nav,
@@ -294,23 +292,7 @@ input,
 select,
 textarea {
   outline: 0;
-}
-/* Android 下 input focus 消除高亮外框 */
-textarea,
-input {
-  -webkit-user-modify: read-write-plaintext-only;
-}
-input::-ms-clear,
-input::-ms-reveal {
-  display: none;
-}
-/**
- * placeholder text color
- */
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
+  -webkit-appearance: none;
 }
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -369,10 +351,6 @@ html,
 body {
   background-color: #f0eff5;
   -webkit-overflow-scrolling: touch;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 a {
   color: inherit;
