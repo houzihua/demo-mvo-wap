@@ -6,7 +6,7 @@
       </router-link>
     </mt-header>
     <div class="header-space"></div>
-    <div class="tip-row flex-box">
+    <div class="es-tip-row flex-box">
       <div class="flex-1 c-f70">请选择文件夹</div>
       <div>如需添加文件夹，请到PC操作</div>
     </div>

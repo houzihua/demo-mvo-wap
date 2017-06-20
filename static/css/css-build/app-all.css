@@ -1028,7 +1028,7 @@ a {
 .es-link-item:first-child .mint-cell-wrapper {
   background: none;
 }
-.tip-row {
+.es-tip-row {
   height: 48px;
   line-height: 48px;
   background: #f0eff5;
