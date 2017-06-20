@@ -12,5 +12,5 @@ export default {
 
 <style >
   @import '../static/css/fs/css/font-awesome.min.css';
-  @import '../static/less/app-all.less';
+  @import '../static/css/css-build/app-all.css';
 </style>
