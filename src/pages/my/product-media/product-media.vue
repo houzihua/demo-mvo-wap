@@ -20,6 +20,21 @@
         <mt-cell :title="item.name" id="1" is-link @click.native="addItem(item)"></mt-cell>
       </li>
     </ul>
+
+
+
+    <div class="filerow clearfix">
+      <div class="input-wrap">
+        <div class="icon-wrap">
+          <i class="fa fa-video-camera" ></i>
+        </div>
+        <input ref="file-input" class="file-input" type="file" accept="video/*">
+      </div>
+      <div>
+        <video id="showVideo" width="320" height="240" controls="controls" class="show-item" src="http://www.w3school.com.cn/i/movie.mp4">
+        </video>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -52,6 +67,34 @@
             }
           }
         }
+      },
+      init:function () {
+        var self = this;
+        console.log(2222)
+
+        $("input[type='file']").change(function(){
+          console.log(1111)
+          self.readURL(this);
+        });
+      },
+      readURL: function(input) {
+        if (input.files && input.files[0]) {
+          var $input = $(input);
+          var $row = $input.parents('.filerow');
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var src = e.target.result;
+            console.log(input.files)
+            console.log(src)
+            var $showItem = $row.find('.show-item');
+            if ($showItem.length = 1) {
+              $showItem.attr('src', src).show();
+            } else {
+
+            }
+          }
+          reader.readAsDataURL(input.files[0]);
+        }
       }
     },
     watch: {
@@ -63,8 +106,16 @@
         var list =[{ id: 1, name:'一文件夹啊啊'},{ id: 2, name:'二文件夹啊啊'},{ id: 3, name:'三文件夹啊啊'},{ id: 4, name:'四文件夹的啊'}];
         return list
       }
+    },
+    mounted: function mounted() {
+      this.init();
     }
   }
 
 </script>
-
+<style>
+  .filerow .input-wrap{height: 100px;position: relative;float: left;margin: 10px;}
+  .filerow .icon-wrap{line-height: 100px;height: 100px;width: 100px;position: absolute;left: 0;text-align: center;font-size: 40px; top:0;border: solid 1px #e3e3e3;z-index: 1}
+  .filerow .file-input{ height: 100px; width: 100px; opacity: 0; position: relative; display: block; z-index: 10; }
+  .filerow .show-item{height: 100px;width: 100px; border: solid 1px #e3e3e3;margin: 10px;}
+</style>
