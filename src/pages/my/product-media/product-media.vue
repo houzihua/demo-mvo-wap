@@ -23,18 +23,38 @@
 
 
 
+    <!--测试视频-->
     <div class="filerow clearfix">
       <div class="input-wrap">
         <div class="icon-wrap">
           <i class="fa fa-video-camera" ></i>
         </div>
-        <input ref="file-input" class="file-input" type="file" accept="video/*">
+        <input id="testVideo" ref="file-input" class="file-input" type="file" accept="video/*">
       </div>
       <div>
-        <video id="showVideo" width="320" height="240" controls="controls" class="show-item" src="http://www.w3school.com.cn/i/movie.mp4">
+        <video id="showVideo" controls="controls" class="show-item" src="http://www.w3school.com.cn/i/movie.mp4">
         </video>
       </div>
     </div>
+
+
+
+
+    <!--测试图片-->
+    <div class="filerow clearfix">
+      <div class="input-wrap">
+        <div class="icon-wrap">
+          <i class="fa fa-video-camera" ></i>
+        </div>
+        <input id="testImg" ref="file-input" class="file-input" type="file" accept="video/*">
+      </div>
+      <div>
+        <img id="showImg"  class="show-item">
+        </img>
+      </div>
+    </div>
+
+
   </div>
 </template>
 
@@ -72,12 +92,33 @@
         var self = this;
         console.log(2222)
 
-        $("input[type='file']").change(function(){
-          console.log(1111)
-          self.readURL(this);
+        $("#testVideo").change(function(){
+          self.testVideo(this);
+        });
+        $("#testImg").change(function(){
+          self.testImg(this);
         });
       },
-      readURL: function(input) {
+      testVideo: function(input) {
+        if (input.files && input.files[0]) {
+          var $input = $(input);
+          var $row = $input.parents('.filerow');
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var src = e.target.result;
+            console.log(input.files)
+            console.log(src)
+            var $showItem = $row.find('.show-item');
+            if ($showItem.length = 1) {
+              $showItem.attr('src', src).show();
+            } else {
+
+            }
+          }
+          reader.readAsDataURL(input.files[0]);
+        }
+      },
+      testImg: function(input) {
         if (input.files && input.files[0]) {
           var $input = $(input);
           var $row = $input.parents('.filerow');
