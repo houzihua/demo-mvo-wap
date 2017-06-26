@@ -56,7 +56,20 @@
         Toast('我是Tip');
       }
     },
-    components: { EsFooter: EsFooter }
+    components: { EsFooter: EsFooter },
+    mounted : function mounted() {
+      var fetch = require('node-fetch');
+
+//      function* gen(){
+//        var url = 'https://api.github.com/users/github';
+//        var result = yield fetch(url);
+//        console.log(result.bio);
+//      }
+
+
+
+    }
+
   }
 </script>
 <style scoped>
